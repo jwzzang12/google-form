@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", "Noto Sans KR", sans-serif;
+  font-size: 15px;
+  text-align: center;
+  background-color: #f0eaf8;
+  position: relative;
+  height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  border: none;
+  background: none;
+  outline: none;
+}
+
+input {
+  display: block;
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  outline: none;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 3px;
+}
+
+.App {
+  padding-top: 10vh;
+}
+
+#titleBox {
+  width: 75vw;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  padding: 2vw;
+  border-top: 10px solid #481d92;
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+#title {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+#title::placeholder,
+.itemTitle::placeholder {
+  color: #000;
+}
+
+.itemBox {
+  width: 75vw;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  padding: 2vw;
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  border-radius: 8px;
+}
+.itemBox .menuTop {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.itemBox .menuTop .itemTitle {
+  font-size: 16px;
+  flex-basis: 65%;
+  padding: 20px;
+  background-color: #ccc;
+}
+.itemBox .menuTop .format {
+  width: 30%;
+}
+
+.menuBottom {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-top: 1px solid #ccc;
+  margin-top: 30px;
+}
+.menuBottom span {
+  display: inline-block;
+  padding: 20px 20px 0 0;
+}
+.menuBottom .btnRequired {
+  font-size: 15px;
+}
+
+#preview {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+}
