@@ -1,9 +1,10 @@
 import { useRef, useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 import { deleteData, modifyData } from "../store/storeItem";
 
 export default function Item({ data }) {
   const [isLong, setIsLong] = useState(false);
+  const [isSelected, setIsSelected] = useState("short");
   const [isEdit, setIsEdit] = useState(false);
   const [localContents, setLocalContents] = useState(data.itemTitle);
   // function autoResize(e) {
@@ -54,7 +55,9 @@ export default function Item({ data }) {
             className="format"
             onChange={(e) => {
               setIsLong(!isLong);
+              setIsSelected(e.target.value);
             }}
+            value={isSelected}
           >
             <option value="short">단답형</option>
             <option value="long">장문형</option>
