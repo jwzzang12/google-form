@@ -12,7 +12,6 @@ body {
   text-align: center;
   background-color: #f0eaf8;
   position: relative;
-  height: 100vh;
 }
 
 a {
@@ -39,6 +38,18 @@ input {
   width: 100%;
   border-bottom: 1px solid #ccc;
   padding-bottom: 3px;
+}
+
+textarea {
+  display: block;
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  outline: none;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  resize: none;
+  height: auto;
 }
 
 .App {
@@ -108,7 +119,7 @@ input {
 }
 
 #preview {
-  position: absolute;
+  position: fixed;
   bottom: 50px;
   right: 50px;
 }

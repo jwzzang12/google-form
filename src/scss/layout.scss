@@ -13,7 +13,6 @@ body {
   text-align: center;
   background-color: $bg-color;
   position: relative;
-  height: 100vh;
 }
 a {
   color: inherit;
@@ -37,7 +36,17 @@ input {
   border-bottom: 1px solid #ccc;
   padding-bottom: 3px;
 }
-
+textarea {
+  display: block;
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  outline: none;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  resize: none;
+  height: auto;
+}
 .App {
   padding-top: 10vh;
 }
@@ -102,7 +111,7 @@ input {
   }
 }
 #preview {
-  position: absolute;
+  position: fixed;
   bottom: 50px;
   right: 50px;
 }

@@ -1,14 +1,18 @@
 import "./App.css";
 import "./css/layout.css";
 import Title from "./components/Title";
-import Item from "./components/Item";
 import Preview from "./components/Preview";
+import List from "./components/List";
+import { useSelector } from "react-redux";
+import NewItem from "./components/NewItem";
 
 function App() {
+  const data = useSelector((state) => state.dataList);
   return (
     <div className="App">
       <Title />
-      <Item />
+      <List data={data} />
+      <NewItem />
       <Preview />
     </div>
   );
