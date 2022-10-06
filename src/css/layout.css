@@ -7,11 +7,11 @@
 }
 
 body {
+  position: relative;
   font-family: "Roboto", "Noto Sans KR", sans-serif;
   font-size: 15px;
   text-align: center;
   background-color: #f0eaf8;
-  position: relative;
 }
 
 a {
@@ -31,25 +31,25 @@ button {
 
 input {
   display: block;
+  width: 100%;
+  padding-bottom: 3px;
   font-family: inherit;
   font-size: inherit;
   border: none;
-  outline: none;
-  width: 100%;
   border-bottom: 1px solid #ccc;
-  padding-bottom: 3px;
+  outline: none;
 }
 
 textarea {
   display: block;
+  width: 100%;
+  height: auto;
   font-family: inherit;
   font-size: inherit;
   border: none;
-  outline: none;
-  width: 100%;
   border-bottom: 1px solid #ccc;
+  outline: none;
   resize: none;
-  height: auto;
 }
 
 .App {
@@ -69,8 +69,8 @@ textarea {
 }
 
 #title {
-  font-size: 32px;
   margin-bottom: 10px;
+  font-size: 32px;
 }
 
 #title::placeholder,
@@ -93,22 +93,25 @@ textarea {
   justify-content: space-between;
   margin-bottom: 20px;
 }
-.itemBox .menuTop .itemTitle {
-  font-size: 16px;
+.itemBox .menuTop .itemTitleBox {
   flex-basis: 65%;
+  text-align: left;
+}
+.itemBox .menuTop .itemTitleBox .itemTitle {
   padding: 20px;
-  background-color: #ccc;
+  font-size: 16px;
+  background-color: #eee;
 }
 .itemBox .menuTop .format {
-  width: 30%;
+  flex-basis: 30%;
 }
 
 .menuBottom {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  border-top: 1px solid #ccc;
   margin-top: 30px;
+  border-top: 1px solid #ccc;
 }
 .menuBottom span {
   display: inline-block;
@@ -120,6 +123,6 @@ textarea {
 
 #preview {
   position: fixed;
-  bottom: 50px;
   right: 50px;
+  bottom: 50px;
 }

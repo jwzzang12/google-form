@@ -8,11 +8,11 @@
   box-sizing: border-box;
 }
 body {
+  position: relative;
   font-family: "Roboto", "Noto Sans KR", sans-serif;
   font-size: 15px;
   text-align: center;
   background-color: $bg-color;
-  position: relative;
 }
 a {
   color: inherit;
@@ -28,24 +28,24 @@ button {
 }
 input {
   display: block;
+  width: 100%;
+  padding-bottom: 3px;
   font-family: inherit;
   font-size: inherit;
   border: none;
-  outline: none;
-  width: 100%;
   border-bottom: 1px solid #ccc;
-  padding-bottom: 3px;
+  outline: none;
 }
 textarea {
   display: block;
+  width: 100%;
+  height: auto;
   font-family: inherit;
   font-size: inherit;
   border: none;
-  outline: none;
-  width: 100%;
   border-bottom: 1px solid #ccc;
+  outline: none;
   resize: none;
-  height: auto;
 }
 .App {
   padding-top: 10vh;
@@ -62,8 +62,8 @@ textarea {
   border-radius: 8px;
 }
 #title {
-  font-size: 32px;
   margin-bottom: 10px;
+  font-size: 32px;
 }
 #title,
 .itemTitle {
@@ -80,19 +80,21 @@ textarea {
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
   background-color: #fff;
   border-radius: 8px;
-
   .menuTop {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
-    .itemTitle {
-      font-size: 16px;
+    .itemTitleBox {
       flex-basis: 65%;
-      padding: 20px;
-      background-color: #ccc;
+      text-align: left;
+      .itemTitle {
+        padding: 20px;
+        font-size: 16px;
+        background-color: #eee;
+      }
     }
     .format {
-      width: 30%;
+      flex-basis: 30%;
     }
   }
 }
@@ -100,8 +102,8 @@ textarea {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  border-top: 1px solid #ccc;
   margin-top: 30px;
+  border-top: 1px solid #ccc;
   span {
     display: inline-block;
     padding: 20px 20px 0 0;
@@ -112,6 +114,6 @@ textarea {
 }
 #preview {
   position: fixed;
-  bottom: 50px;
   right: 50px;
+  bottom: 50px;
 }

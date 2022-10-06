@@ -5,8 +5,8 @@ export const ACTION_TYPES = {
   COPY_DATA: "copyData",
 };
 export const initState = {
-  count: 1,
-  dataList: [{ id: 0 }],
+  count: 0,
+  dataList: [{ id: 0, itemTitle: "제목 없는 질문" }],
 };
 export const insertData = (dataItem) => {
   return {
@@ -58,7 +58,7 @@ const storeItem = (state = initState, action) => {
         count: state.count,
         dataList: state.dataList.map((item, idx) => {
           if (item.id === action.payload.id) {
-            return { ...item, contents: localContents };
+            return { ...item, itemTitle: localContents };
           }
           return item;
         }),

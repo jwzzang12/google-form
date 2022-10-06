@@ -6,7 +6,7 @@ export default function NewItem() {
   const count = useSelector((state) => state.count);
 
   const insertDataItem = function () {
-    dispatch(insertData({ id: count + 1 }));
+    dispatch(insertData({ id: count + 1, itemTitle: "제목 없는 질문" }));
   };
 
   return (
