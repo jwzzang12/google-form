@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from "react";
-import { connect, useDispatch } from "react-redux";
-import { deleteData, modifyData } from "../store/storeItem";
+import { useDispatch } from "react-redux";
+import { deleteData, modifyData, copyData } from "../store/storeItem";
 
 export default function Item({ data }) {
   const [isLong, setIsLong] = useState(false);
@@ -77,7 +77,14 @@ export default function Item({ data }) {
       )}
       {isEdit ? (
         <div className="menuBottom">
-          <span className=" material-icons btnCopy">content_copy</span>
+          <span
+            className=" material-icons btnCopy"
+            onClick={() => {
+              dispatch(copyData(data.id, data.itemTitle));
+            }}
+          >
+            content_copy
+          </span>
           <span
             className="material-icons-outlined btnDelete"
             onClick={() => {

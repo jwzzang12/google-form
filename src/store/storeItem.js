@@ -27,10 +27,10 @@ export const modifyData = (id, localContents) => {
     payload: { id, localContents },
   };
 };
-export const copyData = (id) => {
+export const copyData = (id, itemTitle) => {
   return {
     type: ACTION_TYPES.COPY_DATA,
-    payload: { id },
+    payload: { id, itemTitle },
   };
 };
 const storeItem = (state = initState, action) => {
@@ -42,6 +42,15 @@ const storeItem = (state = initState, action) => {
       return {
         count: state.count + 1,
         dataList: [...state.dataList, newDataItem],
+      };
+    }
+    case ACTION_TYPES.COPY_DATA: {
+      const copyDataItem = {
+        ...action.payload,
+      };
+      return {
+        count: state.count + 1,
+        dataList: [...state.dataList, copyDataItem],
       };
     }
     case ACTION_TYPES.DELETE_DATA: {
