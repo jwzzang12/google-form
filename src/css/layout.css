@@ -104,6 +104,8 @@ textarea {
 }
 .itemBox .menuTop .format {
   flex-basis: 30%;
+  padding: 10px;
+  font-size: 16px;
 }
 
 .menuBottom {
@@ -119,6 +121,11 @@ textarea {
 }
 .menuBottom .btnRequired {
   font-size: 15px;
+  display: flex;
+  word-break: keep-all;
+}
+.menuBottom .btnRequired input {
+  margin-left: 5px;
 }
 
 #preview {
