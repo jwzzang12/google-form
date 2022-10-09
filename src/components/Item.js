@@ -9,9 +9,11 @@ export default function Item({ data }) {
   const [isEdit, setIsEdit] = useState(false);
   const [isRequired, setIsRequired] = useState(false);
   const [localContents, setLocalContents] = useState(data.itemTitle);
+  //필수
   const toggleRequired = function () {
     setIsRequired(!isRequired);
   };
+  //단답형, 장문형
   const onClickValueHandler = (e) => {
     setIsSelected(e.target.value);
     if (e.target.value === "short") {
@@ -20,17 +22,20 @@ export default function Item({ data }) {
       setIsLong(true);
     }
   };
+  // 미리보기 기능 구현 시에 적용
   // function autoResize(e) {
   //   e.target.style.height = "auto";
   //   e.target.style.height = `${e.target.scrollHeight}px`;
   // }
   // onKeyDown={autoResize}
+
   const dispatch = useDispatch();
   const itemBox = useRef();
 
   const clickOutside = (e) => {
     if (isEdit && !itemBox.current.contains(e.target)) setIsEdit(false);
   };
+  //itemBox 바깥 클릭 시에 modifyData 반영
   useEffect(() => {
     window.addEventListener("click", clickOutside);
     dispatch(modifyData(data.id, localContents));
@@ -38,6 +43,7 @@ export default function Item({ data }) {
       window.removeEventListener("click", clickOutside);
     };
   }, [isEdit]);
+
   return (
     <div
       className="itemBox"
