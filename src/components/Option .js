@@ -3,9 +3,9 @@ export default function Option({ isLong }) {
   return (
     <>
       {!isLong ? (
-        <input type="text" placeholder="단답형 텍스트" readOnly />
+        <input type="text" placeholder="Short answer text" readOnly />
       ) : (
-        <textarea placeholder="장문형 텍스트" className="long" readOnly></textarea>
+        <textarea placeholder="Long answer text" className="long" readOnly></textarea>
       )}
     </>
   );

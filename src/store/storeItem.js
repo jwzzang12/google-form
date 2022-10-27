@@ -6,7 +6,7 @@ export const ACTION_TYPES = {
 };
 export const initState = {
   count: 0,
-  dataList: [{ id: 0, itemTitle: "제목 없는 질문" }],
+  dataList: [{ id: 0, itemTitle: "Untitled Question" }],
 };
 export const insertData = (dataItem) => {
   return {

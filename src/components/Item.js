@@ -35,7 +35,6 @@ export default function Item({ data }) {
   const clickOutside = (e) => {
     if (isEdit && !itemBox.current.contains(e.target)) setIsEdit(false);
   };
-  //itemBox 바깥 클릭 시에 modifyData 반영
   useEffect(() => {
     window.addEventListener("click", clickOutside);
     dispatch(modifyData(data.id, localContents));
@@ -58,7 +57,7 @@ export default function Item({ data }) {
             <input
               type="text"
               className="itemTitle"
-              placeholder="제목 없는 질문"
+              placeholder="Untitled Question"
               value={localContents}
               onChange={(e) => {
                 setLocalContents(e.target.value);
@@ -70,11 +69,11 @@ export default function Item({ data }) {
         </div>
         {isEdit ? (
           <select name="format" className="format" onChange={onClickValueHandler} value={isSelected}>
-            <option value="short">단답형</option>
-            <option value="long">장문형</option>
-            <option value="objectQ">객관식 질문</option>
-            <option value="checkbox">체크박스</option>
-            <option value="dropdown">드롭다운</option>
+            <option value="short">Short answer</option>
+            <option value="long">Paragraph</option>
+            <option value="objectQ">Multiple choice</option>
+            <option value="checkbox">Checkboxes</option>
+            <option value="dropdown">Dropdown</option>
           </select>
         ) : (
           ""
@@ -101,7 +100,7 @@ export default function Item({ data }) {
           </span>
           <span>
             <label className="btnRequired">
-              필수
+              Required
               <input type="checkbox" defaultChecked={isRequired} onClick={toggleRequired} />
             </label>
           </span>
